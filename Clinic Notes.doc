@@ -8,5 +8,5 @@ Enties
 Relationship
     (7,20)PH-PCP-PA(1,1)
     (0,N)Su-SS-PA(1,P)
-    PH-Per-Med
-    PA-Use-Med
+    (0,N)PH-Per-Med(0,M)
+    (0,N)PA-Use-Med(0,M)

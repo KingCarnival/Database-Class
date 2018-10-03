@@ -1,6 +1,12 @@
 Enties
     Patients(ID,name,address,Bloodtype,allergy[code],gender,cholersteral[HDL,LDL,Triglyceride],insurance)
-    Personal(ID, Name, address, salary, phone)
+    Employee(ID, Name, address, salary, phone)
         Physcian(Id,Specialty,Rank)
         Surgeon(Id, Specialty, Skill)
     Medication(MedCode,Name,Price,Manufacter,Class,MedAdverse)
+
+Relationship
+    (7,20)PH-PCP-PA(1,1)
+    (0,N)Su-SS-PA(1,P)
+    PH-Per-Med
+    PA-Use-Med

@@ -1,5 +1,7 @@
 Create database [Clinic]
 
+USE Clinic
+
 create table [Employee]
 (
     [EmployeeID] [int] not null,

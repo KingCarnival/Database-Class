@@ -4,7 +4,7 @@ USE Clinic
 
 create table [Employee]
 (
-    [EmployeeID] [int] not null,
+    [EmployeeID] [int] not null primary key,
     [Name] [nvarchar] (70),
     [Gender] [varchar] (70),
     [Address] [varchar] (70),
@@ -14,21 +14,21 @@ create table [Employee]
 
 CREATE TABLE [Physician]
 (
-    [EmployeeID] [int] not null,
+    [EmployeeID] [INT] Foreign key references Employee(EmployeeID),
     [Speciality] [varchar] (50),
     [Rank] [varchar] (40),
 )
 
 CREATE TABLE [Surgeon]
 (
-    [EmployeeID] [int] not null,
+    [EmployeeID] [INT] Foreign key references Employee(EmployeeID),
     [Speciality] [varchar] (50),
     [Skill] [varchar] (40),
 )
 
 CREATE TABLE [Meds]
 (
-    [MedCode] [int] not NULL,
+    [MedCode] [int] not NULL primary key,
     [Name] [nvarchar] (70),
     [Listed Price] [int],
     [Class] [nvarchar],
@@ -37,11 +37,19 @@ CREATE TABLE [Meds]
 
 CREATE TABLE [Patient]
 (
-    [PatientID] [int] not NULL,
+    [PatientID] [int] not NULL primary key,
     [Name] [nvarchar] (70),
     [Gender] [varchar] (70),
     [Address] [varchar] (70),
     [Insurance] [varchar] (70),
+
+)
+
+CREATE TABLE [Surgery](
+    [EmployeeID] [INT] Foreign key references Employee(EmployeeID),
+    [PatientID] [INT] Foreign key references Patient(PatientID),
+    [SurgeryID] [INT] not NULL PRIMARY KEY,
+    [Address] [varchar] (70),
 
 )
 

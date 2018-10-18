@@ -8,8 +8,10 @@ create table [Employee]
     [Name] [nvarchar] (70),
     [Gender] [varchar] (70),
     [Address] [varchar] (70),
+    [PhoneNumber] [int],
     [Role] [varchar] (70),
     [Salary] [decimal] (20,2),
+    PRIMARY KEY (EmployeeID)
 )
 
 CREATE TABLE [Physician]
@@ -33,6 +35,7 @@ CREATE TABLE [Meds]
     [Listed Price] [int],
     [Class] [nvarchar],
     [Manufacturer] [nvarchar] (70),
+    PRIMARY KEY (MedCode)
 )
 
 CREATE TABLE [Patient]
@@ -41,7 +44,13 @@ CREATE TABLE [Patient]
     [Name] [nvarchar] (70),
     [Gender] [varchar] (70),
     [Address] [varchar] (70),
+    [DateOfBirth] [DateTime],
     [Insurance] [varchar] (70),
+    [BloodType] [char] (70),
+    [AllergyCode] [int],
+    [BloodeSurgar] [int],
+    [Cholosteral] [int],
+    PRIMARY KEY (PatientID)
 
 )
 

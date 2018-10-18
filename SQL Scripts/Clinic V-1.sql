@@ -53,5 +53,12 @@ CREATE TABLE [Surgery](
 
 )
 
+CREATE TABLE [Prescription](
+    [EmployeeID] [INT] Foreign key references Employee(EmployeeID),
+    [PatientID] [INT] Foreign key references Patient(PatientID),
+    [MedCode] [INT] FOREIGN KEY REFERENCES Meds(MedCode),
+    
+)
+
 INSERT INTO Employee (EmployeeID,Name,Gender,Address,Role,Salary)
 VALUES (00001, 'John', 'Male', '450 Doe Lane', 'Physician',50000.50);
